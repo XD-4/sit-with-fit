@@ -1513,33 +1513,7 @@ section, [id] {
    FLOATING SLIDE DECK TRIGGER
    ========================================================================== */
 .floating-deck-trigger {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 999;
-}
-
-.deck-trigger-btn {
-    background: rgba(11, 15, 23, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(16px);
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: var(--radius-full);
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 0.88rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-    transition: all 0.2s ease;
-}
-
-.deck-trigger-btn:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-2px);
+    display: none !important;
 }
 
 /* ==========================================================================

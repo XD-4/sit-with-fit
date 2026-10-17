@@ -854,18 +854,22 @@ function initSlideDeckPresentation() {
         }
     };
 
-    toggleBtn.addEventListener('click', togglePresentationDeck);
-    exitBtn.addEventListener('click', switchToMainPage);
+    if (toggleBtn) toggleBtn.addEventListener('click', togglePresentationDeck);
+    if (exitBtn) exitBtn.addEventListener('click', switchToMainPage);
 
-    prevBtn.addEventListener('click', () => showDeckSlide(deckCurrent - 1));
-    nextBtn.addEventListener('click', () => showDeckSlide(deckCurrent + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => showDeckSlide(deckCurrent - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showDeckSlide(deckCurrent + 1));
 
-    notesBtn.addEventListener('click', () => {
-        notesDrawer.classList.toggle('hidden');
-    });
-    closeNotesBtn.addEventListener('click', () => {
-        notesDrawer.classList.add('hidden');
-    });
+    if (notesBtn && notesDrawer) {
+        notesBtn.addEventListener('click', () => {
+            notesDrawer.classList.toggle('hidden');
+        });
+    }
+    if (closeNotesBtn && notesDrawer) {
+        closeNotesBtn.addEventListener('click', () => {
+            notesDrawer.classList.add('hidden');
+        });
+    }
 
     window.addEventListener('keydown', (e) => {
         if (!slideDeck.classList.contains('hidden')) {
