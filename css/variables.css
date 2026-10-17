@@ -1,0 +1,40 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN TOKENS
+   Sit with Fit — Dark Obsidian & Aceternity Cyberpunk Theme
+   ========================================================================== */
+
+:root {
+    /* Color Palette */
+    --bg-obsidian: #06080D;
+    --bg-card: rgba(13, 17, 26, 0.7);
+    --bg-card-hover: rgba(18, 24, 38, 0.85);
+    
+    /* Borders & Accents */
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(0, 229, 255, 0.3);
+    
+    --accent-cyan: #00E5FF;
+    --accent-cyan-glow: rgba(0, 229, 255, 0.35);
+    --accent-emerald: #10B981;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.35);
+    --accent-purple: #8B5CF6;
+    --accent-orange: #FF6B35;
+    --accent-red: #EF4444;
+    
+    /* Typography Colors */
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    
+    /* Font Families */
+    --font-heading: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+    
+    /* Layout Dimensions */
+    --max-w: 1140px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+}
