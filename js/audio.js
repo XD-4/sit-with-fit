@@ -14,8 +14,8 @@ export function initBackgroundAudio() {
 
     if (!audio || !toggleBtn) return;
 
-    // Set soft volume as requested ("เปิดเบาๆ")
-    audio.volume = 0.22;
+    // Set very soft ambient volume ("เปิดเบาๆ พอ")
+    audio.volume = 0.06;
 
     let isPlaying = false;
 
