@@ -20,10 +20,10 @@ export function initCharts() {
             datasets: [{
                 label: 'คะแนนการซ้อมตอบเฉลี่ย (/10)',
                 data: [8.2, 7.6, 8.0, 8.1, 7.4],
-                backgroundColor: 'rgba(0, 229, 255, 0.22)',
-                borderColor: '#00E5FF',
+                backgroundColor: 'rgba(56, 189, 248, 0.22)',
+                borderColor: '#38BDF8',
                 borderWidth: 2,
-                pointBackgroundColor: '#00F2FE',
+                pointBackgroundColor: '#7DD3FC',
                 pointBorderColor: '#fff'
             }]
         },

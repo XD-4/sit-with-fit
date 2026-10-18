@@ -11,7 +11,7 @@
 
 .bento-card {
     position: relative;
-    background: rgba(11, 15, 23, 0.6);
+    background: rgba(8, 20, 46, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 28px;
@@ -45,7 +45,7 @@
     font-size: 0.7rem;
     font-weight: 700;
     color: var(--accent-cyan);
-    background: rgba(0, 229, 255, 0.12);
+    background: rgba(56, 189, 248, 0.12);
     padding: 2px 8px;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -99,7 +99,7 @@
 }
 
 .bento-spec-card {
-    background: rgba(11, 15, 23, 0.6);
+    background: rgba(8, 20, 46, 0.6);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     padding: 20px;
@@ -152,7 +152,7 @@
 }
 
 .modern-table .th-highlight, .modern-table .td-highlight {
-    background: rgba(0, 229, 255, 0.08);
+    background: rgba(56, 189, 248, 0.08);
     color: #FFFFFF;
 }
 
@@ -247,7 +247,7 @@
 }
 
 .qa-card-item {
-    background: rgba(11, 15, 23, 0.65);
+    background: rgba(8, 20, 46, 0.65);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -315,7 +315,7 @@
 .qa-body-content {
     display: none;
     padding: 0 20px 20px;
-    background: rgba(6, 9, 15, 0.5);
+    background: rgba(3, 10, 28, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -367,7 +367,7 @@
    FOOTER
    ========================================================================== */
 .app-footer {
-    background: #04060A;
+    background: #010512;
     border-top: 1px solid var(--border-subtle);
     padding: 40px 0 24px;
 }

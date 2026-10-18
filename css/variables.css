@@ -1,38 +1,53 @@
 /* ==========================================================================
    CSS VARIABLES & DESIGN TOKENS
-   Sit with Fit — Dark Obsidian & Aceternity Cyberpunk Theme
+   Sit with Fit — Deep Space Navy / Sky Blue / White
+   (Inspired by KMUTT Engineering Open House starfield aesthetic)
    ========================================================================== */
 
 :root {
-    /* Color Palette */
-    --bg-obsidian: #06080D;
-    --bg-card: rgba(13, 17, 26, 0.7);
-    --bg-card-hover: rgba(18, 24, 38, 0.85);
-    
+    /* Base surfaces */
+    --bg-obsidian: #020817;
+    --bg-space: #030B24;
+    --bg-card: rgba(9, 22, 52, 0.7);
+    --bg-card-hover: rgba(14, 30, 66, 0.85);
+
+    /* Brand blues */
+    --navy-900: #020817;
+    --navy-800: #061433;
+    --navy-700: #0B1F4D;
+    --blue-600: #1D4ED8;
+    --blue-500: #2563EB;
+    --blue-400: #3B82F6;
+    --sky-400: #38BDF8;
+    --sky-300: #7DD3FC;
+    --ice-100: #E0F2FE;
+    --white: #F8FBFF;
+
     /* Borders & Accents */
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-glow: rgba(0, 229, 255, 0.3);
-    
-    --accent-cyan: #00E5FF;
-    --accent-cyan-glow: rgba(0, 229, 255, 0.35);
+    --border-subtle: rgba(147, 197, 253, 0.12);
+    --border-glow: rgba(56, 189, 248, 0.35);
+
+    --accent-cyan: #38BDF8;
+    --accent-cyan-glow: rgba(56, 189, 248, 0.35);
     --accent-emerald: #10B981;
     --accent-emerald-glow: rgba(16, 185, 129, 0.35);
-    --accent-purple: #8B5CF6;
+    --accent-purple: #2563EB;
     --accent-orange: #FF6B35;
     --accent-red: #EF4444;
-    
+
     /* Typography Colors */
-    --text-primary: #F8FAFC;
-    --text-secondary: #94A3B8;
-    --text-muted: #64748B;
-    
+    --text-primary: #F8FBFF;
+    --text-secondary: #A5B8D6;
+    --text-muted: #6B80A3;
+
     /* Font Families */
-    --font-heading: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'Space Grotesk', monospace;
-    
+    --font-display: 'Bebas Neue', 'Prompt', sans-serif;
+    --font-heading: 'Prompt', 'IBM Plex Sans Thai', -apple-system, sans-serif;
+    --font-body: 'IBM Plex Sans Thai', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Space Grotesk', monospace;
+
     /* Layout Dimensions */
-    --max-w: 1140px;
+    --max-w: 1180px;
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;

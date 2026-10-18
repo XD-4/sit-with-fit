@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Prompt:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -18,7 +18,14 @@
 </head>
 <body class="bg-obsidian text-slate-100">
 
-    <!-- Aceternity Floating Navbar -->
+    <!-- Cosmic Starfield Canvas & Ambient Nebula Glow (Inspired by KMUTT Open House) -->
+    <div class="cosmic-nebula-glow" aria-hidden="true"></div>
+    <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
+
+    <!-- Background Music Audio: Dua Lipa - Levitating feat. DaBaby (Soft volume BGM) -->
+    <audio id="bgAudio" loop preload="auto" src="./assets/levitating.mp3"></audio>
+
+    <!-- KMUTT-Inspired Cosmic Pill Navbar -->
     <nav class="floating-nav-container">
         <div class="floating-nav">
             <a href="#hero" class="nav-brand">
@@ -26,18 +33,53 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19c2-4 4-6 8-6s6 2 8 6"/><circle cx="12" cy="7" r="4"/><path d="M12 13v6"/></svg>
                 </div>
                 <span class="brand-name">Sit with Fit</span>
-                <span class="brand-badge">IoT Core</span>
+                <span class="brand-badge">KMUTT ENG // IOT</span>
             </a>
             
             <div class="nav-menu desktop-only">
-                <a href="#posture-sim" class="nav-link nav-highlight">
-                    <span class="nav-live-dot"></span>
-                    <span>ตรวจจับท่านั่ง</span>
+                <a href="#posture-sim" class="kmutt-nav-link nav-highlight">
+                    <span class="bracket">[</span>
+                    <span class="nav-label-box"><span class="nav-live-dot"></span>ตรวจจับท่านั่ง</span>
+                    <span class="bracket">]</span>
                 </a>
-                <a href="#features" class="nav-link">จุดเด่นระบบ</a>
-                <a href="#engineering" class="nav-link">โครงสร้าง 5 ชั้น</a>
-                <a href="#benchmark" class="nav-link">เปรียบเทียบตลาด</a>
-                <a href="#committee-qa" class="nav-link">ซ้อมตอบกรรมการ</a>
+                <a href="#features" class="kmutt-nav-link">
+                    <span class="bracket">[</span>
+                    <span class="nav-label-box">จุดเด่นระบบ</span>
+                    <span class="bracket">]</span>
+                </a>
+                <a href="#engineering" class="kmutt-nav-link">
+                    <span class="bracket">[</span>
+                    <span class="nav-label-box">โครงสร้าง 5 ชั้น</span>
+                    <span class="bracket">]</span>
+                </a>
+                <a href="#benchmark" class="kmutt-nav-link">
+                    <span class="bracket">[</span>
+                    <span class="nav-label-box">เปรียบเทียบตลาด</span>
+                    <span class="bracket">]</span>
+                </a>
+                <a href="#committee-qa" class="kmutt-nav-link">
+                    <span class="bracket">[</span>
+                    <span class="nav-label-box">ซ้อมตอบกรรมการ</span>
+                    <span class="bracket">]</span>
+                </a>
+            </div>
+
+            <!-- Cyber Audio Controller Pill (Dua Lipa - Levitating) -->
+            <div class="audio-controller-pill" id="audioToggleBtn" title="Dua Lipa - Levitating (feat. DaBaby)">
+                <div class="audio-wave-bars">
+                    <span class="wave-bar bar-1"></span>
+                    <span class="wave-bar bar-2"></span>
+                    <span class="wave-bar bar-3"></span>
+                    <span class="wave-bar bar-4"></span>
+                </div>
+                <div class="audio-track-info">
+                    <span class="audio-live-tag">BGM ACTIVE</span>
+                    <span class="audio-title">Levitating • Dua Lipa</span>
+                </div>
+                <button class="audio-play-btn" id="audioPlayIcon" aria-label="Toggle BGM">
+                    <svg class="icon-play" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <svg class="icon-pause hidden" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -268,9 +310,9 @@
                                             <stop offset="100%" stop-color="#D97706"/>
                                         </linearGradient>
                                         <linearGradient id="spineGradientPurple" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#A78BFA"/>
-                                            <stop offset="50%" stop-color="#8B5CF6"/>
-                                            <stop offset="100%" stop-color="#6D28D9"/>
+                                            <stop offset="0%" stop-color="#60A5FA"/>
+                                            <stop offset="50%" stop-color="#2563EB"/>
+                                            <stop offset="100%" stop-color="#1D4ED8"/>
                                         </linearGradient>
                                     </defs>
 
@@ -423,8 +465,8 @@
                                             C 104 108, 117 92, 122 78 Z"
                                         />
                                         <!-- Dual Glowing Elastic Resistance Bands -->
-                                        <line x1="68" y1="195" x2="134" y2="101" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3,2"/>
-                                        <circle cx="134" cy="101" r="5" fill="#C4B5FD" stroke="#8B5CF6" stroke-width="2"/>
+                                        <line x1="68" y1="195" x2="134" y2="101" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3,2"/>
+                                        <circle cx="134" cy="101" r="5" fill="#BFDBFE" stroke="#2563EB" stroke-width="2"/>
 
                                         <circle cx="130" cy="42" r="3.5" class="human-ear"/>
                                         <circle cx="144" cy="37" r="1.5" class="human-eye"/>
@@ -437,14 +479,14 @@
                                     <g id="vertebraeNodes">
                                         <circle id="vCervical" cx="114" cy="80" r="4.5" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
                                         <circle id="vThoracic" cx="108" cy="125" r="4.5" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
-                                        <circle id="vLumbar" cx="110" cy="165" r="5" fill="#FFFFFF" stroke="#00E5FF" stroke-width="2.5"/>
+                                        <circle id="vLumbar" cx="110" cy="165" r="5" fill="#FFFFFF" stroke="#38BDF8" stroke-width="2.5"/>
                                         <circle id="vPelvis" cx="120" cy="200" r="5.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
                                     </g>
 
                                     <!-- Dynamic Vertebrae Labels -->
                                     <text id="lblNeck" x="145" y="83" fill="rgba(255,255,255,0.6)" font-size="9" font-family="'Space Grotesk', monospace">C1–C7 Neck: 12°</text>
                                     <text id="lblThoracic" x="145" y="128" fill="rgba(255,255,255,0.6)" font-size="9" font-family="'Space Grotesk', monospace">T1–T12 Thoracic: 32°</text>
-                                    <text id="lblLumbar" x="145" y="168" fill="#00E5FF" font-size="9" font-family="'Space Grotesk', monospace">L1–L5 Lumbar: Support 95%</text>
+                                    <text id="lblLumbar" x="145" y="168" fill="#38BDF8" font-size="9" font-family="'Space Grotesk', monospace">L1–L5 Lumbar: Support 95%</text>
 
                                     <!-- Pelvis Seat Line -->
                                     <rect x="70" y="200" width="100" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
@@ -475,15 +517,15 @@
                                         <!-- Heatmap Multi-Stop Gradients -->
                                         <radialGradient id="gradOptimalHeat" cx="50%" cy="50%" r="50%">
                                             <stop offset="0%" stop-color="#10B981" stop-opacity="0.95"/>
-                                            <stop offset="45%" stop-color="#00E5FF" stop-opacity="0.6"/>
-                                            <stop offset="75%" stop-color="#00E5FF" stop-opacity="0.2"/>
-                                            <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+                                            <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.6"/>
+                                            <stop offset="75%" stop-color="#38BDF8" stop-opacity="0.2"/>
+                                            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
                                         </radialGradient>
 
                                         <radialGradient id="gradLumbarActive" cx="50%" cy="50%" r="50%">
-                                            <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.95"/>
+                                            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.95"/>
                                             <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.5"/>
-                                            <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+                                            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
                                         </radialGradient>
 
                                         <radialGradient id="gradDangerHeat" cx="50%" cy="50%" r="50%">
@@ -500,9 +542,9 @@
                                         </radialGradient>
 
                                         <radialGradient id="gradPurpleHeat" cx="50%" cy="50%" r="50%">
-                                            <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.95"/>
-                                            <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.5"/>
-                                            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+                                            <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.95"/>
+                                            <stop offset="50%" stop-color="#2563EB" stop-opacity="0.5"/>
+                                            <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
                                         </radialGradient>
 
                                         <filter id="heatBlur" x="-30%" y="-30%" width="160%" height="160%">
@@ -516,7 +558,7 @@
                                     
                                     <!-- Inner Contour Lines (Isobar Topography) -->
                                     <path d="M 65 55 Q 130 45, 195 55 Q 210 105, 204 175 Q 195 215, 130 220 Q 65 215, 56 175 Q 50 105, 65 55 Z" 
-                                          fill="#060911" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="2,2"/>
+                                          fill="#041029" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="2,2"/>
 
                                     <!-- Tailbone Relief Groove Cutout -->
                                     <path d="M 120 120 C 115 120, 110 145, 110 170 C 110 185, 120 190, 130 190 C 140 190, 150 185, 150 170 C 150 145, 145 120, 140 120 Z" 
@@ -539,8 +581,8 @@
 
                                     <!-- Sensor Labels & Percentage Badges -->
                                     <g id="heatmapTextLabels">
-                                        <rect x="90" y="58" width="80" height="18" rx="9" fill="rgba(6, 9, 17, 0.75)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1"/>
-                                        <text id="lblLumbarVal" x="130" y="70" text-anchor="middle" fill="#00E5FF" font-size="9" font-family="'Space Grotesk', monospace" font-weight="600">LUMBAR: 95%</text>
+                                        <rect x="90" y="58" width="80" height="18" rx="9" fill="rgba(6, 9, 17, 0.75)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+                                        <text id="lblLumbarVal" x="130" y="70" text-anchor="middle" fill="#38BDF8" font-size="9" font-family="'Space Grotesk', monospace" font-weight="600">LUMBAR: 95%</text>
 
                                         <rect x="52" y="142" width="66" height="18" rx="9" fill="rgba(6, 9, 17, 0.75)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
                                         <text id="lblPelvisLVal" x="85" y="154" text-anchor="middle" fill="#10B981" font-size="9" font-family="'Space Grotesk', monospace" font-weight="600">L: 50%</text>
