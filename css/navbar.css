@@ -1,11 +1,11 @@
 /* ==========================================================================
    KMUTT-INSPIRED FLOATING COSMIC NAVBAR & AUDIO CONTROLLER
-   Color Theme: Sky Blue, Deep Navy, Pure Ice White
+   Bug-free, responsive, high-precision layout
    ========================================================================== */
 
 .floating-nav-container {
     position: fixed;
-    top: 16px;
+    top: 14px;
     left: 0;
     width: 100%;
     display: flex;
@@ -17,26 +17,29 @@
 
 .floating-nav {
     pointer-events: auto;
-    background: rgba(4, 13, 38, 0.78);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    box-shadow: 0 12px 40px rgba(2, 8, 23, 0.7), 0 0 24px rgba(37, 99, 235, 0.15);
+    background: rgba(4, 13, 38, 0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    box-shadow: 0 16px 40px rgba(2, 8, 23, 0.75), 0 0 25px rgba(37, 99, 235, 0.2);
     border-radius: var(--radius-full);
-    padding: 8px 18px;
+    padding: 7px 14px 7px 18px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    max-width: 1140px;
-    width: 100%;
-    justify-content: space-between;
+    gap: 16px;
+    max-width: 1180px;
+    width: max-content;
+    margin: 0 auto;
 }
 
-/* Brand Section */
+/* Brand Section (Zero Wrap Bug) */
 .nav-brand {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .brand-logo-icon {
@@ -50,14 +53,17 @@
     justify-content: center;
     box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
 }
 
 .brand-name {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 800;
     color: #FFFFFF;
     letter-spacing: -0.3px;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .brand-badge {
@@ -66,44 +72,49 @@
     background: rgba(56, 189, 248, 0.15);
     color: var(--accent-cyan);
     border: 1px solid rgba(56, 189, 248, 0.35);
-    padding: 2px 8px;
+    padding: 3px 8px;
     border-radius: 6px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: inline-block;
 }
 
 /* KMUTT Monospace Bracket Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    flex-shrink: 1;
 }
 
 .kmutt-nav-link {
     display: inline-flex;
     align-items: center;
+    gap: 3px;
     font-family: var(--font-mono);
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--text-secondary);
-    padding: 5px 6px;
-    border-radius: 4px;
+    color: #94A3B8;
+    padding: 6px 8px;
+    border-radius: 6px;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
     letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 .kmutt-nav-link .bracket {
-    color: rgba(56, 189, 248, 0.4);
+    color: rgba(56, 189, 248, 0.45);
     transition: all 0.2s ease;
     font-weight: 700;
-    padding: 0 2px;
 }
 
-.kmutt-nav-link .nav-label-box {
-    padding: 2px 6px;
-    border-radius: 4px;
+.kmutt-nav-link .nav-text-inner {
     transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 .kmutt-nav-link:hover {
@@ -112,28 +123,25 @@
 
 .kmutt-nav-link:hover .bracket {
     color: #38BDF8;
-    text-shadow: 0 0 8px #38BDF8;
+    text-shadow: 0 0 10px #38BDF8;
 }
 
-.kmutt-nav-link:hover .nav-label-box {
-    background: #38BDF8;
-    color: #020817;
-    font-weight: 700;
+.kmutt-nav-link:hover .nav-text-inner {
+    color: #38BDF8;
+}
+
+.kmutt-nav-link.nav-highlight {
+    color: #FFFFFF;
 }
 
 .kmutt-nav-link.nav-highlight .bracket {
     color: #38BDF8;
+    text-shadow: 0 0 8px #38BDF8;
 }
 
-.kmutt-nav-link.nav-highlight .nav-label-box {
+.kmutt-nav-link.nav-highlight .nav-text-inner {
     color: #38BDF8;
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-}
-
-.kmutt-nav-link.nav-highlight:hover .nav-label-box {
-    background: #38BDF8;
-    color: #020817;
+    font-weight: 700;
 }
 
 .nav-live-dot {
@@ -144,8 +152,8 @@
     box-shadow: 0 0 8px #38BDF8;
     display: inline-block;
     flex-shrink: 0;
+    margin-right: 6px;
     position: relative;
-    margin-right: 4px;
 }
 
 .nav-live-dot::after {
@@ -163,44 +171,49 @@
 }
 
 /* ==========================================================================
-   KMUTT-STYLE AUDIO CONTROLLER PILL (DUA LIPA - LEVITATING)
+   KMUTT-STYLE AUDIO CONTROLLER PILL (NEVER OVERFLOWS)
    ========================================================================== */
 .audio-controller-pill {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: rgba(6, 19, 51, 0.85);
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    gap: 9px;
+    background: rgba(8, 23, 61, 0.92);
+    border: 1px solid rgba(56, 189, 248, 0.4);
     border-radius: var(--radius-full);
     padding: 5px 12px;
     cursor: pointer;
     backdrop-filter: blur(12px);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 16px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.25);
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .audio-controller-pill:hover {
     border-color: #38BDF8;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
     transform: translateY(-1px);
+    background: rgba(12, 33, 84, 0.95);
 }
 
 .audio-controller-pill.playing {
     border-color: #38BDF8;
-    background: rgba(9, 28, 77, 0.9);
+    background: rgba(10, 30, 80, 0.95);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
 }
 
 /* Animated Equalizer Wave Bars */
 .audio-wave-bars {
     display: flex;
     align-items: flex-end;
-    gap: 2.5px;
-    height: 14px;
+    gap: 2px;
+    height: 12px;
     width: 14px;
+    flex-shrink: 0;
 }
 
 .wave-bar {
-    width: 2.5px;
+    width: 2.2px;
     background: #38BDF8;
     border-radius: 1px;
     height: 3px;
@@ -222,8 +235,8 @@
 
 @keyframes waveBounce {
     0% { height: 3px; }
-    50% { height: 14px; background: #FFFFFF; }
-    100% { height: 6px; background: #38BDF8; }
+    50% { height: 12px; background: #FFFFFF; }
+    100% { height: 5px; background: #38BDF8; }
 }
 
 .audio-track-info {
@@ -231,11 +244,12 @@
     flex-direction: column;
     text-align: left;
     line-height: 1.15;
+    flex-shrink: 0;
 }
 
 .audio-live-tag {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     font-weight: 700;
     color: #38BDF8;
     letter-spacing: 0.8px;
@@ -243,13 +257,10 @@
 
 .audio-title {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     font-weight: 600;
     color: #FFFFFF;
     white-space: nowrap;
-    max-width: 140px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .audio-play-btn {
